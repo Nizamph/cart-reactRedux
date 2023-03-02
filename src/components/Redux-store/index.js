@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import cartReducer from './cart-Slice'
+import uiReducer from './ui-slice'
 
 const store = configureStore({
-  reducer:cartReducer
+  reducer:uiReducer
 })
 
 export default store;

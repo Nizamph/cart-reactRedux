@@ -1,15 +1,13 @@
 import CartButton from '../Cart/CartButton';
 import classes from './MainHeader.module.css';
 import { useSelector,useDispatch } from 'react-redux';
-import { cartActions } from '../Redux-store/cart-Slice';
+import { uiActions } from '../Redux-store/ui-slice';
 const MainHeader = (props) => {
-  const showCart = useSelector(state => state.cartShow)
+
   const dispatch = useDispatch()
-  const onShowCartHandler = () => {
-    dispatch(cartActions.cartShow(true))
-  }
-  const onCloseCartHandler = () => {
-    dispatch(cartActions.cartShow(false))
+
+  const onToggleCartHandler = () => {
+    dispatch(uiActions.cartToggle())
   }
   return (
     <header className={classes.header}>
@@ -17,7 +15,7 @@ const MainHeader = (props) => {
       <nav>
         <ul>
           <li>
-            {showCart?<CartButton onShow={onCloseCartHandler} />:<CartButton onShow={onShowCartHandler} />}
+            <CartButton onToggle={onToggleCartHandler} />
           </li>
         </ul>
       </nav>
