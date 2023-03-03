@@ -1,6 +1,6 @@
 import CartButton from '../Cart/CartButton';
 import classes from './MainHeader.module.css';
-import { useSelector,useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { uiActions } from '../Redux-store/ui-slice';
 const MainHeader = (props) => {
 
